@@ -221,6 +221,7 @@ SELECT*
 FROM Students
 WHERE student_id = 1;
 
+START TRANSACTION;
 UPDATE Students
 SET name = 'janvi'
 WHERE student_id = 5;
