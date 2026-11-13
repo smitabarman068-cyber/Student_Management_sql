@@ -101,9 +101,9 @@ WHERE student_id = 2;
 INSERT INTO Students (name, email, mobile)
 VALUES ('dimpi', 'dimpi@gmail.com', '6900211158');
 DELETE FROM Students
-WHERE email = 'testuser@gmail.com';
+WHERE email = 'dimpi@gmail.com';
 
-#Calculate total payments per student
+#Display students with their enrolled courses
 SELECT
     s.student_id,
     s.name,
@@ -114,6 +114,7 @@ INNER JOIN Admissions a
     ON s.student_id = a.student_id
 INNER JOIN Courses c
     ON a.course_id = c.course_id;
+#Calculate total payments per student
 SELECT
     s.student_id,
     s.name,
@@ -124,8 +125,10 @@ INNER JOIN Admissions a
 INNER JOIN Payments p
     ON a.admission_id = p.admission_id
 GROUP BY s.student_id, s.name;
+#Check admission IDs and student IDs
 SELECT admission_id, student_id
 FROM Admissions;
+#Check Admissions table structure
 DESCRIBE Admissions;
 
 #Identify pending fee balances.
